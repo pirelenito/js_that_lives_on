@@ -120,7 +120,7 @@ Assynchronous Module Definition
 
 --
 ## Bitch please!
-![Bitch please](src/img/bitch_please.jpg)
+![Bitch please](slides/img/bitch_please.jpg)
 
 --
 # RequireJS
