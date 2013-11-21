@@ -1,7 +1,49 @@
-# Demo
---
+# Starting from the top!
 
+--
+# Mockup
+![Component](slides/img/app_mockup.png)
+
+--
+# Hollow View
+
+    var PlayerSessionView = Marionette.ItemView.extend({
+      template: template
+    });
+
+    new PlayerSessionView().render();
+
+--
+# Static HTML template
+
+    <div class="player-session transitionable">
+      <button class="back-button">Back</button><button class="show-tooltips">Help</button>
+      <div class="card-back"></div>
+      <div class="card">
+        <div class="player-card">
+          <span class="level">1</span><span class="view-count">0</span>
+          <h1 class="keyword">Term</h1>
+          <p class="definition">long definition</p>
+          <div class="question">
+            <div class="knowledge-question">
+              <p>Did you get this one?</p>
+              <nav>
+                <button class="yes-button">Yes</button>
+                <button class="no-button">No</button>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+--
+# With CSS
 ![Component](slides/img/components_00.png)
+
+--
+# Break into smaller components
+
 --
 ![Component](slides/img/components_01.png)
 --
@@ -14,8 +56,10 @@
 ![Component](slides/img/components_05.png)
 
 --
-# How do we come up with this?
-## or even test it?
+# Start to add behavior by specs
+
+--
+# With TDD magic
 
 --
 # Progress Bar View
