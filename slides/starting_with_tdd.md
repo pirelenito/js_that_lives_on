@@ -28,9 +28,7 @@
       });
     });
 
-<div class="fragment">
-  <img src="slides/img/978-1-78216-720-4_02_01.png" alt="">
-</div>
+<p class="fragment pass-spec">Pass!</p>
 
 --
 # Why?
@@ -48,9 +46,7 @@
       });
     });
 
-<div class="fragment">
-  <img src="slides/img/978-1-78216-720-4_02_02.png" alt="">
-</div>
+<p class="fragment fail-spec">ReferenceError: deck is not defined.</p>
 
 --
 ## Declare variable
@@ -63,9 +59,7 @@
       });
     });
 
-<div class="fragment">
-  <img src="slides/img/978-1-78216-720-4_02_03.png" alt="">
-</div>
+<p class="fragment fail-spec">ReferenceError: Deck is not defined.</p>
 
 --
 ## New source file
@@ -88,9 +82,7 @@
       });
     });
 
-<div class="fragment">
-  <img src="slides/img/978-1-78216-720-4_02_04.png" alt="">
-</div>
+<p class="fragment fail-spec">ReferenceError: stock is not defined.</p>
 
 --
 ## Add the cards variable
@@ -105,9 +97,7 @@
       });
     });
 
-<div class="fragment">
-  <img src="slides/img/978-1-78216-720-4_02_05.png" alt="">
-</div>
+<p class="fragment fail-spec">ReferenceError: Stock is not defined.</p>
 
 --
 ## New source file
@@ -132,12 +122,7 @@
       });
     });
 
-<div class="fragment">
-  <img src="slides/img/978-1-78216-720-4_02_06.png" alt="">
-</div>
-
---
-# Missing assingment
+<p class="fragment fail-spec">Expected undefined to equal [ { } ].</p>
 
 --
 ## Pass parameter on Spec
@@ -157,15 +142,11 @@
       this.cards = cards;
     }
 
-<div class="fragment">
-  <img src="slides/img/978-1-78216-720-4_02_07.png" alt="">
-</div>
+<p class="fragment pass-spec">Pass!</p>
 
 --
 
 ![Happy](slides/img/happy.png)
-
-It is green!
 
 --
 # Feed your specs
