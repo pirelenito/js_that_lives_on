@@ -125,7 +125,7 @@
 <p class="fragment fail-spec">Expected undefined to equal [ { } ].</p>
 
 --
-## Pass parameter on Spec
+## Pass parameter on spec
 
     describe("Deck", function() {
       it("should have a collection of cards", function() {
@@ -136,7 +136,7 @@
       });
     });
 
-## Add parameter on Source
+## Add parameter on source
 
     function Deck (cards) {
       this.cards = cards;

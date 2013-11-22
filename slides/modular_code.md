@@ -230,7 +230,7 @@ src/alerter.js:
 
 
 --
-### SpecHelper.js
+### spec_helper.js
 
     define([
       'jasmine',
@@ -247,7 +247,7 @@ src/alerter.js:
     });
 
 --
-### Boot.js
+### spec_runner.js
 
     require([
       'jquery',

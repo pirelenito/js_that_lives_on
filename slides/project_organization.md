@@ -22,7 +22,7 @@
 # Off course Not!
 
 --
-# Spread similar things across the project
+# Why spread similar things across the project?
 
 --
 # Forces we to categorize stuff
@@ -56,7 +56,7 @@
 * domain/deck.js
 
 --
-# Code, style and templates in the same place.
+# Code, style and templates in the same place
 
 --
 # What about that underline?
