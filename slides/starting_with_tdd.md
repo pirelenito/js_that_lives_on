@@ -1,4 +1,13 @@
+# How did we start?
+
+--
 # Thinking in TDD
+
+--
+# Or better saying, BDD
+
+--
+# User Stories
 
 --
 # Deck
@@ -163,8 +172,4 @@ It is green!
 write only what you need to move to the next step
 
 --
-# But!
-## That is easy
-
---
-# How do you build front end code?
+# That is easy!

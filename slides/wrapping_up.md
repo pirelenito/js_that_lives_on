@@ -1,13 +1,23 @@
 # Wrapping up!
 
 --
-# The Book
-## Jasmine JavaScript Testing
-
-[paulo.ragonha.me/jasmine-book](http://paulo.ragonha.me/jasmine-book)
+# 209 unit tests
 
 --
-# Thanks
+# Ruby dependency was bad
+
+--
+# Marionette is awesome
+
+--
+# Project Q&A couldn't find a bug!
+
+--
+![bravi](slides/img/bravi.png)
+## We are hiring!
+
+--
+# Thanks!
 [https://twitter.com/pirelenito](https://twitter.com/pirelenito)
 
 [https://github.com/pirelenito/jasmine-testing-example](https://github.com/pirelenito/jasmine-testing-example)

@@ -1,17 +1,11 @@
+# But, How do you build the front end code?
+
+--
 # Starting from the top!
 
 --
 # Mockup
 ![Component](slides/img/app_mockup.png)
-
---
-# Hollow View
-
-    var PlayerSessionView = Marionette.ItemView.extend({
-      template: template
-    });
-
-    new PlayerSessionView().render();
 
 --
 # Static HTML template
@@ -38,8 +32,11 @@
     </div>
 
 --
-# With CSS
+# And with CSS
 ![Component](slides/img/components_00.png)
+
+--
+# Pretty, but dumb.
 
 --
 # Break into smaller components
@@ -56,14 +53,19 @@
 ![Component](slides/img/components_05.png)
 
 --
-# Start to add behavior by specs
+# Start to add behavior
 
 --
 # With TDD magic
 
 --
-# Progress Bar View
-## The non-interactive
+# What is a component?
+
+--
+## Document element encapsulated by a JavaScript object that we call View.
+
+--
+# Progress Bar
 ![Component](slides/img/progress_bar.png)
 
 --
@@ -124,8 +126,7 @@
     });
 
 --
-# Knowledge Question View
-## The interactive
+# Knowledge Question
 ![Component](slides/img/knowledge_question.png)
 
 --
@@ -143,6 +144,34 @@
         expect(view.$('.yes-button')).toContainHtml('Yes');
       });
     });
+
+--
+## What should the yes button do?
+
+--
+## Is it the KnowledgeQuestionView's responability to know?
+
+--
+# NO!
+
+--
+## Observable pattern
+
+### like jQuery:
+
+    function observer () {
+      alert('clicked');
+    }
+
+    $('a').click(observer);
+
+### but on our component:
+
+    function observer () {
+      alert('clicked');
+    }
+
+    view.on('answer:yes', observer);
 
 --
 ## Should notify on clicking yes
@@ -168,39 +197,20 @@
     });
 
 --
-## Observable pattern
-
-### jQuery:
-
-    function observer () {
-      alert('clicked');
-    }
-
-    $('a').click(observer);
-
-### View:
-
-    function observer () {
-      alert('clicked');
-    }
-
-    view.on('answer:yes', observer);
-
---
 # Integration
 
 ![Component](slides/img/observable.png)
 
 --
-# Things to keep in mind
+# Wrapping up...
 
 --
-# A View should access only its DOM element
-
---
-# Respect encapsulation
+# A component should access only its DOM element
 
 --
 # Integrate with observers
 
     currentPlayerCardView.on('complete', this.showNextCard);
+
+--
+# Awesome!

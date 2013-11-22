@@ -1,3 +1,37 @@
+# Breaking the app into smaller files
+
+--
+# Module
+
+    var KnowledgeQuestionView = Marionette.ItemView.extend({
+      className: 'knowledge-question',
+      template: template,
+
+      events: {
+        'click .yes-button': clickYes,
+        'click .no-button': clickNo
+      }
+    });
+
+    function clickYes () {
+      this.trigger('answer:yes');
+    }
+
+    function clickNo () {
+      this.trigger('answer:no');
+    }
+
+--
+## Poluting the global namespace
+> clickYes, clickNo
+
+--
+# Create scope with JavaScript?
+
+--
+# Functions!
+
+--
 # The module pattern
 
 --
@@ -6,53 +40,60 @@
 
 --
 ## IIFE
-    (function ($, Investment, Stock) {
+    (function (template, Marionette) {
+      var KnowledgeQuestionView = Marionette.ItemView.extend({
+        className: 'knowledge-question',
+        template: template,
 
-      function NewInvestmentView () {
-        // body...
+        events: {
+          'click .yes-button': clickYes,
+          'click .no-button': clickNo
+        }
+      });
+
+      function clickYes () {
+        this.trigger('answer:yes');
       }
 
-      this.NewInvestmentView = NewInvestmentView;
+      function clickNo () {
+        this.trigger('answer:no');
+      }
 
-    })(jQuery, Investment, Stock);
+      this.KnowledgeQuestionView = KnowledgeQuestionView;
+    })(templates['knowledge_question'], Marionette);
 
 --
 ## Creating a new function
-    var iife = function ($, Investment, Stock) {
-
-      function NewInvestmentView () {
-        // body...
-      }
-
-      this.NewInvestmentView = NewInvestmentView;
-
+    var iife = function (template, Marionette) {
+      // code...
     }
 
 ## And executing it immediately
 
-    iife(jQuery, Investment, Stock);
+    iife(templates['knowledge_question'], Marionette);
 
 --
-## Why IIFE
-* Everything is local to the Module;
-* Less chance to polute the global namespace.
+## Define variables worry free!
+
+--
 # Life goes on
 ## application starts to grow
 
 --
 ## Bigger Applications
 
-    ./src/Application.js
-    ./src/Boot.js
-    ./src/models/Investment.js
-    ./src/models/Stock.js
-    ./src/models/StockCollection.js
-    ./src/plugins/jquery-disable-input.js
-    ./src/routers/InvestmentsRouter.js
-    ./src/views/ApplicationView.js
-    ./src/views/InvestmentListView.js
-    ./src/views/InvestmentView.js
-    ./src/views/NewInvestmentView.js
+    ./src/flashcards/card_definition_popup_view.css.scss
+    ./src/flashcards/card_definition_popup_view.js
+    ./src/flashcards/card_definition_popup_view.jst
+    ./src/flashcards/completion_message.js
+    ./src/flashcards/confidence_question_view.css.scss
+    ./src/flashcards/confidence_question_view.js
+    ./src/flashcards/confidence_question_view.jst
+    ./src/flashcards/flipping_region.css
+    ./src/flashcards/flipping_region.js
+    ./src/flashcards/img/icon-check.png
+    ./src/flashcards/img/icon-close.png
+    ./src/flashcards/img/icon-trophy-small.png
     ...
 
 # Dependency hell!
@@ -69,17 +110,22 @@ Assynchronous Module Definition
 ## Declare a module
 
     define([
-      'jQuery',
-      'Investment',
-      'Stock'
+      'tpl!flashcards/knowledge_question_view.jst',
+      'marionette'
     ],
-    function ($, Investment, Stock) {
+    function (template, Marionette) {
+      var KnowledgeQuestionView = Marionette.ItemView.extend({
+      });
 
-      function NewInvestmentView () {
-        // body...
+      function clickYes () {
+        this.trigger('answer:yes');
       }
 
-      return NewInvestmentView;
+      function clickNo () {
+        this.trigger('answer:no');
+      }
+
+      return KnowledgeQuestionView;
     });
 
 --
@@ -89,21 +135,19 @@ Assynchronous Module Definition
 # It looks like a IIFE!
 
 --
-## Why you
-# no CommonsJS?
+# Why you no CommonsJS?
 
 --
 ## CommonsJS
 
-    var $ = require('jQuery');
-    var Investment = require('Investment');
-    var Stock = require('Stock');
+    var Marionette = require('marionette');
+    var template = require('tpl!flashcards/knowledge_question_view.jst');
 
-    function NewInvestmentView () {
+    function KnowledgeQuestionView () {
       // body...
     }
 
-    exports.NewInvestmentView = NewInvestmentView;
+    exports.KnowledgeQuestionView = KnowledgeQuestionView;
 
 --
 # Yay, No callbacks!
@@ -112,8 +156,7 @@ Assynchronous Module Definition
 # Browser is async
 
 --
-## CommonsJS
-# needs compilation
+# CommonsJS needs compilation
 
 --
 # But RequireJS is hard!
@@ -126,7 +169,8 @@ Assynchronous Module Definition
 # RequireJS
 Singe JavaScript library
 
-Works with file://
+--
+## Works with file://
 
 --
 index.html:
@@ -154,45 +198,41 @@ src/alerter.js:
     });
 
 --
---
 # Pack and minify
 [Optimizer tool](http://requirejs.org/docs/optimization.html)
 
 --
-# Non AMD depencecies
+# Non AMD dependencies
 [Setup Config Shim](http://requirejs.org/docs/api.html#config-shim)
 
 --
 # What about testing ?
 
 --
-## InvestmentSpec.js
+### knowledge_question_view_spec.js
     define([
-      'spec/SpecHelper',
-      'Investment',
-      'Stock'
+      'spec/spec_helper',
+      'sinon',
+      'flashcards/knowledge_question_view'
     ],
-    function (jasmine, Investment, Stock) {
-      describe("Investment", function() {
-        ...
+    function (jasmine, sinon, KnowledgeQuestionView) {
+      describe("KnowledgeQuestionView", function() {
+
       });
     });
 
+
 --
-## SpecHelper.js
+### SpecHelper.js
 
     define([
       'jasmine',
-      'jasmine-jquery'
+      'jasmine-jquery',
+      'jasmine-sinon'
     ],
     function (jasmine) {
-      jasmine.getFixtures().fixturesPath = 'spec/fixtures';
-
       beforeEach(function() {
         this.addMatchers({
-          toBeAGoodInvestment: function() {
-            return investment.isGood();
-          }
         });
       });
 
@@ -200,14 +240,14 @@ src/alerter.js:
     });
 
 --
-## Boot.js
+### Boot.js
 
     require([
       'jquery',
       'jasmine',
       'jasmine-html',
 
-      'spec/InvestmentSpec'
+      'spec/knowledge_question_view_spec'
     ],
     function($, jasmine) {
       var jasmineEnv = jasmine.getEnv();
