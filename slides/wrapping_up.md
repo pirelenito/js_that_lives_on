@@ -4,13 +4,16 @@
 # 209 unit tests
 
 --
-# Ruby dependency was bad
+# Project Q&A couldn't find a bug!
+
+--
+# Ruby was unnecessary
 
 --
 # Marionette is awesome
 
 --
-# Project Q&A couldn't find a bug!
+# JavaScript is awesome
 
 --
 ![bravi](slides/img/bravi.png)

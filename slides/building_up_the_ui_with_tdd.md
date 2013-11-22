@@ -62,7 +62,10 @@
 # What is a component?
 
 --
-## Document element encapsulated by a JavaScript object that we call View.
+## A document element encapsulated by a JavaScript object
+
+--
+## Also called View
 
 --
 # Progress Bar
