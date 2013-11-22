@@ -19,13 +19,13 @@
 * templates/deck_form.jst
 
 --
-# Offcourse Not!
+# Off course Not!
 
 --
-# Spread similar things accross the project
+# Spread similar things across the project
 
 --
-# Forces you to categorize stuff
+# Forces we to categorize stuff
 
 --
 # Terrible to track dependencies
@@ -37,10 +37,10 @@
 # Popularized by Rails
 
 --
-# Got to be a better way
+# It got to be a better way
 
 --
-# Put similar things togheter
+# Why not put similar things togheter?
 
 --
 # Into "Packages"

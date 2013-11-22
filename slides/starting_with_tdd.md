@@ -149,8 +149,8 @@
 ![Happy](slides/img/happy.png)
 
 --
-# Feed your specs
-write only what you need to move to the next step
+# Feed our specs
+write only what we need to move to the next step
 
 --
 # That is easy!

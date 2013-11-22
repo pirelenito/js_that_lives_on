@@ -23,10 +23,13 @@
 
 --
 ## Poluting the global namespace
-> clickYes, clickNo
+clickYes, clickNo
 
 --
-# Create scope with JavaScript?
+# How do we fix this?
+
+--
+# Scopes!
 
 --
 # Functions!
@@ -63,17 +66,17 @@
     })(templates['knowledge_question'], Marionette);
 
 --
-## Creating a new function
+## Creates a new function
     var iife = function (template, Marionette) {
       // code...
     }
 
-## And executing it immediately
+## And executes it immediately
 
     iife(templates['knowledge_question'], Marionette);
 
 --
-## Define variables worry free!
+## Now we can define variables worry free!
 
 --
 # Life goes on
@@ -135,7 +138,7 @@ Assynchronous Module Definition
 # It looks like a IIFE!
 
 --
-# Why you no CommonsJS?
+# Why we no CommonsJS?
 
 --
 ## CommonsJS
@@ -204,6 +207,10 @@ src/alerter.js:
 --
 # Non AMD dependencies
 [Setup Config Shim](http://requirejs.org/docs/api.html#config-shim)
+
+--
+# grunt.js plugin
+[grunt-requirejs](https://github.com/asciidisco/grunt-requirejs)
 
 --
 # What about testing ?

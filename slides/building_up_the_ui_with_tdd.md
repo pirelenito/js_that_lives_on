@@ -1,4 +1,4 @@
-# But, How do you build the front end code?
+# But, How do we build the front end code?
 
 --
 # Starting from the top!

@@ -15,7 +15,7 @@
 # Component style
 * defines a component appearence
 * not its position or margin
-* preferable not size
+* preferable not to define size
 * relative font sizes
 
 --
