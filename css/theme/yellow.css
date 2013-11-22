@@ -144,3 +144,7 @@ body {
   color: white;
   padding: 20px;
 }
+
+.reveal blockquote {
+  box-shadow: none;
+}
